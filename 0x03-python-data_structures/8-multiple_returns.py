@@ -5,4 +5,4 @@ def multiple_returns(sentence):  # test
         f_char = sentence[0]
         return n, f_char
     else:
-        return 0
+        return 0, None

@@ -7,5 +7,5 @@ class Square:
     """Square class"""
 
     def __init__(self, size):
-        """The init function (constrator)"""
+        """(constrator)"""
         self.__size = size

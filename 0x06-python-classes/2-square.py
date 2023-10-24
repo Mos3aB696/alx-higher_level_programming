@@ -7,7 +7,7 @@ class Square:
     """Square class"""
 
     def __init__(self, size=0):
-        """The init function (constrator)"""
+        """(constrator)"""
         if type(size) is not int:
             raise TypeError("size must be an integer")
         elif size < 0:

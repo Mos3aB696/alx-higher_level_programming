@@ -26,7 +26,7 @@ class Square:
 
     @property
     def position(self):
-        """position method"""
+        """Getter method"""
         return self.__position
 
     @position.setter
@@ -49,5 +49,5 @@ class Square:
         else:
             print("\n" * self.position[1], end="")
             print(
-                "\n".join(" " * self.position[0] +
-                          "#" * self.size for _ in range(self.size)))
+                ("\n".join(" " * self.position[0] +
+                           "#" * self.size for _ in range(self.size))))

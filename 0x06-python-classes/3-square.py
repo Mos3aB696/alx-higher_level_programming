@@ -7,7 +7,7 @@ class Square:
     """Square class"""
 
     def __init__(self, size=0):
-        """The init function (constrator)"""
+        """(constrator)"""
         if type(size) is not int:
             raise TypeError("size must be an integer")
         elif size < 0:
@@ -16,7 +16,7 @@ class Square:
             self.__size = size
 
     def get_size(self):
-        """get_size function"""
+        """get_size method"""
         return self.__size
 
     def area(self):

@@ -51,22 +51,22 @@ class Rectangle:
 
     def area(self):
         """The Rectangle Area"""
-        return self.__width * self.__height
+        return self.width * self.height
 
     def perimeter(self):
         """The Rectangel Perimeter"""
-        if self.__width == 0 or self.__height == 0:
+        if self.width == 0 or self.height == 0:
             return 0
-        return (self.__width + self.__height) * 2
+        return (self.width + self.height) * 2
 
     def __str__(self):
         if self.width == 0 or self.height == 0:
             return ""
-        return '\n'.join(str(self.print_symbol) * self.__width
-                         for _ in range(self.__height))
+        return '\n'.join(str(self.print_symbol) * self.width
+                         for _ in range(self.height))
 
     def __repr__(self):
-        return f'Rectangle({self.__width}, {self.__height})'
+        return f'Rectangle({self.width}, {self.height})'
 
     def __del__(self):
         print("Bye rectangle...")
@@ -74,18 +74,15 @@ class Rectangle:
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-        if isinstance(rect_1, Rectangle) is False:
+        if type(rect_1) is not Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
-        elif isinstance(rect_2, Rectangle) is False:
+        if type(rect_2) is not Rectangle:
             raise TypeError("rect_2 must be an instance of Rectangle")
-        elif Rectangle.area(rect_1) == Rectangle.area(rect_2):
+        if rect_1.area() >= rect_2.area():
             return rect_1
-        elif Rectangle.area(rect_1) > Rectangle.area(rect_2):
-            return rect_1
-        elif Rectangle.area(rect_1) < Rectangle.area(rect_2):
-            return rect_2
+        return rect_2
 
     @classmethod
     def square(cls, size=0):
         """Return A New Rectangle"""
-        return Rectangle(size, size)
+        return cls(size, size)

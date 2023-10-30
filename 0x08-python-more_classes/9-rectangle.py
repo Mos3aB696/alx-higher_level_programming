@@ -14,14 +14,6 @@ class Rectangle:
         return cls(size, size)
 
     def __init__(self, width=0, height=0):
-        if type(height) is not int:
-            raise TypeError("height must be an integer")
-        elif height < 0:
-            raise ValueError("height must be >= 0")
-        if type(width) is not int:
-            raise TypeError("width must be an integer")
-        elif width < 0:
-            raise ValueError("width must be >= 0")
         self.__width = width
         self.__height = height
         Rectangle.number_of_instances += 1

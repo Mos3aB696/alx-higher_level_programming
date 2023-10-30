@@ -45,12 +45,12 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         self.__width = value
 
-    @property
     def area(self):
         """The Rectangle Area"""
         return self.width * self.height
 
-    @property
     def perimeter(self):
         """The Rectangel Perimeter"""
+        if self.width == 0 or self.height == 0:
+            return 0
         return (self.width + self.height) * 2

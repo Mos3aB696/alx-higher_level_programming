@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-def copy_list(l):
-    return l[:]  # l[:] == list(l)
+def copy_list(list):
+    return list[:]  # l[:] == list(l)

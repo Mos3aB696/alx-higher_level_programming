@@ -5,6 +5,9 @@
 class BaseGeometry:
     """Empty Class"""
 
+    def __init__(self):
+        pass
+
     def area(self):
         """Public Instance Method"""
         raise Exception("area() is not implemented")
@@ -22,6 +25,6 @@ class Rectangle(BaseGeometry):
 
     def __init__(self, width, height):
         self.integer_validator("width", width)
-        self.integer_validator("height", height)
         self.__width = width
+        self.integer_validator("height", height)
         self.__height = height

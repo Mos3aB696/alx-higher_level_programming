@@ -3,9 +3,10 @@
 
 
 class MyList(list):
-    """MyList Class"""
+    """ subclass of list"""
 
     def __init__(self):
+        """init the object"""
         super().__init__()
 
     def print_sorted(self):

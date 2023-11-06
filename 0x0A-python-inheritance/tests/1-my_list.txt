@@ -3,7 +3,7 @@
 --------------------------------------
 
 case 0: import
->>> MyList = __import__('1-my_list').MyList
+    >>> MyList = __import__('1-my_list').MyList
 
     case 1: common case
 

@@ -3,6 +3,8 @@
 Importing The Function From Class
 ::
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>> integer_validator = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
+    >>> area = __import__("7-base_geometry").BaseGeometry.area.__doc__
 
 ::
     >>> bg = BaseGeometry()

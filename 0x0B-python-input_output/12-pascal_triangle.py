@@ -6,7 +6,7 @@ def pascal_triangle(n):
     """Function That Return List Of Lists"""
     if n <= 0:
         return []
-    
+
     triangles = [[1]]
     while len(triangles) != n:
         tri = triangles[-1]

@@ -1,6 +1,9 @@
 #!/usr/bin/python3
+"""Define Function That Append After Last Line"""
+
 
 def append_after(filename="", search_string="", new_string=""):
+    """Append Function"""
     text = ''
     with open(filename) as file:
         for line in file:

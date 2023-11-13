@@ -22,11 +22,32 @@ class Rectangle(Base):
         id (int): The id of the new Rectangle. If id is None, the new Rectangle
         will be assigned an auto-generated, unique id.
         """
+        """Check Height"""
+        if type(height) is not int:
+            raise TypeError("height must be an integer")
+        if height <= 0:
+            raise ValueError("height must be > 0")
+        """Check Width"""
+        if not isinstance(width, int):
+            raise TypeError("width must be an integer")
+        if width <= 0:
+            raise ValueError("width must be > 0")
+        """Check x"""
+        if not isinstance(x, int):
+            raise TypeError("x must be an integer")
+        if x < 0:
+            raise ValueError("x must be >= 0")
+        """Check y"""
+        if not isinstance(y, int):
+            raise TypeError("y must be an integer")
+        if y < 0:
+            raise ValueError("y must be >= 0")
+
         super().__init__(id)
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
 
     @property
     def width(self):
@@ -86,16 +107,16 @@ class Rectangle(Base):
 
     def area(self):
         """Rectangle Area Function"""
-        return self.width * self.height
+        return self.__width * self.__height
 
     def display(self):
         """Print the square with the # character."""
-        print("\n" * self.y, end="")
-        for _ in range(self.height):
-            print(" " * self.x + '#' * self.width)
+        print("\n" * self.__y, end="")
+        for _ in range(self.__height):
+            print(" " * self.__x + '#' * self.__width)
 
     def __str__(self):
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
 
     def update(self, *args):
         attributes = ['id', 'width', 'height', 'x', 'y']

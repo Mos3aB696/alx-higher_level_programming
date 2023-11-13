@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """
-This module defines the Rectangle class that inherits from Base.
-The Rectangle class has private instance attributes width, height, x, and y,
-each with its own public getter and setter.
+This module defines the Rectangle class
 """
 from .base import Base
 
@@ -13,41 +11,12 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """
         Initialize a new Rectangle.
-
-        Parameters:
-        width (int): The width of the new Rectangle.
-        height (int): The height of the new Rectangle.
-        x (int): The x coordinate of the new Rectangle. Default is 0.
-        y (int): The y coordinate of the new Rectangle. Default is 0.
-        id (int): The id of the new Rectangle. If id is None, the new Rectangle
-        will be assigned an auto-generated, unique id.
         """
-        """Check Height"""
-        if type(height) is not int:
-            raise TypeError("height must be an integer")
-        if height <= 0:
-            raise ValueError("height must be > 0")
-        """Check Width"""
-        if not isinstance(width, int):
-            raise TypeError("width must be an integer")
-        if width <= 0:
-            raise ValueError("width must be > 0")
-        """Check x"""
-        if not isinstance(x, int):
-            raise TypeError("x must be an integer")
-        if x < 0:
-            raise ValueError("x must be >= 0")
-        """Check y"""
-        if not isinstance(y, int):
-            raise TypeError("y must be an integer")
-        if y < 0:
-            raise ValueError("y must be >= 0")
-
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
@@ -107,17 +76,17 @@ class Rectangle(Base):
 
     def area(self):
         """Rectangle Area Function"""
-        return self.__width * self.__height
+        return self.width * self.height
 
     def display(self):
         """Print the square with the # character."""
-        print("\n" * self.__y, end="")
-        for _ in range(self.__height):
-            print(" " * self.__x + '#' * self.__width)
+        print("\n" * self.y, end="")
+        for _ in range(self.height):
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
-        str_one = f"[Rectangle] ({self.id}) {self.__x}/{self.__y}"
-        str_two = f"{self.__width}/{self.__height}"
+        str_one = f"[Rectangle] ({self.id}) {self.x}/{self.y}"
+        str_two = f"{self.width}/{self.height}"
         return f"{str_one} - {str_two}"
 
     def update(self, *args, **kwargs):

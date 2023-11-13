@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-from .base import Base
 """
 This module defines the Rectangle class that inherits from Base.
 The Rectangle class has private instance attributes width, height, x, and y,
 each with its own public getter and setter.
 """
+from .base import Base
 
 
 class Rectangle(Base):

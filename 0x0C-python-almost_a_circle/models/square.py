@@ -23,8 +23,9 @@ class Square(Rectangle):
         self.height = value
 
     def __str__(self):
-        """str method"""
-        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
+        str_one = f"[Square] ({self.id}) {self.x}/{self.y}"
+        str_two = f"{self.size}"
+        return f"{str_one} - {str_two}"
 
     def update(self, *args, **kwargs):
         """updated"""

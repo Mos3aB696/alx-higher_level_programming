@@ -23,7 +23,7 @@ class Square(Rectangle):
         self.height = value
 
     def __str__(self):
-        str_one = f"[Square] ({self.id}) {self.x}/{self.y}"
+        str_one = f"[Square] ({self.id}) {self.__x}/{self.__y}"
         str_two = f"{self.size}"
         return f"{str_one} - {str_two}"
 

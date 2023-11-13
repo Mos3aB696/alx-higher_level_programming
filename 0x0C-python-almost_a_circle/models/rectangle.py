@@ -116,9 +116,9 @@ class Rectangle(Base):
             print(" " * self.__x + '#' * self.__width)
 
     def __str__(self):
-        varOne = f"[Rectangle] ({self.id}) {self.__x}/{self.__y}"
-        varTwo = f"{self.__width}/{self.__height}"
-        return varOne + " - " + varTwo
+        str_one = f"[Rectangle] ({self.id}) {self.__x}/{self.__y}"
+        str_two = f"{self.__width}/{self.__height}"
+        return f"{str_one} - {str_two}"
 
     def update(self, *args, **kwargs):
         """updated"""

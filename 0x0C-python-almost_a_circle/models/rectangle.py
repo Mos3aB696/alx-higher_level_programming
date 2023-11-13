@@ -116,9 +116,26 @@ class Rectangle(Base):
             print(" " * self.__x + '#' * self.__width)
 
     def __str__(self):
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        varOne = f"[Rectangle] ({self.id}) {self.__x}/{self.__y}"
+        varTwo = f"{self.__width}/{self.__height}"
+        return varOne + " - " + varTwo
 
-    def update(self, *args):
-        attributes = ['id', 'width', 'height', 'x', 'y']
-        for attribute, value in zip(attributes, args):
-            setattr(self, attribute, value)
+    def update(self, *args, **kwargs):
+        """updated"""
+        if args is not None and len(args) != 0:
+            attributes = ["id", "width", "height", "x", "y"]
+            for i in range(len(args)):
+                setattr(self, attributes[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def to_dictionary(self):
+        """ Rectangle instance to dictionary """
+        attributes = ["id", "width", "height", "x", "y"]
+        dictionary = {}
+
+        for key in attributes:
+            dictionary[key] = getattr(self, key)
+
+        return dictionary

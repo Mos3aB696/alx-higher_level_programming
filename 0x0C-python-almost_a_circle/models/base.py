@@ -2,6 +2,7 @@
 """ class Base """
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -106,3 +107,37 @@ class Base:
         except FileNotFoundError:
             pass
         return list_objs
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        # Create a new turtle screen and set its background color
+        screen = turtle.Screen()
+        screen.bgcolor("white")
+
+        # Create a new turtle object
+        t = turtle.Turtle()
+
+        # Draw rectangles
+        for rectangle in list_rectangles:
+            t.penup()
+            # Move to the position of the rectangle
+            t.goto(rectangle.x, rectangle.y)
+            t.pendown()
+            for _ in range(2):
+                t.forward(rectangle.width)
+                t.right(90)
+                t.forward(rectangle.height)
+                t.right(90)
+
+        # Draw squares
+        for square in list_squares:
+            t.penup()
+            t.goto(square.x, square.y)  # Move to the position of the square
+            t.pendown()
+            for _ in range(4):
+                t.forward(square.size)
+                t.right(90)
+
+        # Hide the turtle and keep the screen open until it is clicked
+        t.hideturtle()
+        screen.exitonclick()

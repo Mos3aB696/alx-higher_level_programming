@@ -1,5 +1,5 @@
 #!/usr/bin/node
-import process from 'process';
+const process = require('process');
 const args = process.argv;
 
 if (args.length === 2) {

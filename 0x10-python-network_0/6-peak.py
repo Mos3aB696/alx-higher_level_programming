@@ -1,6 +1,12 @@
 #!/usr/bin/python3
-# Find a peak in a list of unsorted integers.
 def find_peak(lst):
+    """
+    The function `find_peak` takes in a list of numbers and returns the peak element, which is an
+    element that is greater than its adjacent elements.
+    
+    :param lst: The parameter `lst` is a list of numbers
+    :return: the peak element from the given list.
+    """
     n = len(lst)
     if n == 1:
         return lst[0]

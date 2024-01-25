@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# Function that finds a peak in a list of unsorted integers.
 def find_peak(lst):
     """
     The function `find_peak` takes in a list of numbers

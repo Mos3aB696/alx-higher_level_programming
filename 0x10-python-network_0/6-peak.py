@@ -3,16 +3,25 @@
     The function `find_peak` takes in a list of numbers
     and returns the peak element, which is an
     element that is greater than its adjacent elements.
-    :param list_of_integers: The parameter `list_of_integers` is a list of numbers
+    :param lst: The parameter `lst` is a list of numbers
     :return: the peak element from the given list.
 """
 
 
-def find_peak(list_of_integers):
+def find_peak(lst):
     """BRUTE force implementation for question
     """
-    max_i = None
-    for ele in list_of_integers:
-        if max_i is None or max_i < ele:
-            max_i = ele
-    return max_i
+    n = len(lst)
+    if n == 1:
+        return lst[0]
+    elif n == 2:
+        return max(lst[0], lst[1])
+    elif n == 0:
+        return None
+    mid = n // 2
+    if lst[mid] > lst[mid - 1] and lst[mid] > lst[mid + 1]:
+        return lst[mid]
+    elif lst[mid] <= lst[mid - 1]:
+        return find_peak(lst[:mid])
+    else:
+        return find_peak(lst[mid+1:])

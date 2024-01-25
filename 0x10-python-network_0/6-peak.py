@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# Find a peak in a list of unsorted integers.
 def find_peak(lst):
     n = len(lst)
     if n == 1:

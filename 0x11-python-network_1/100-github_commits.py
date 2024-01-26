@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""_summary_
+    Python script that takes 2 arguments to display the only 10 commits
+    of the repository "Repo_name" by the user "User_name" using the Github API
+"""
 
 import requests
 import sys

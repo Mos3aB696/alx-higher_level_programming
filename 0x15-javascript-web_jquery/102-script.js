@@ -4,7 +4,7 @@ $(() => {
     const languageCode = $('#language_code').val();
     const url = 'https://www.fourtonfish.com/hellosalut/hello/' + languageCode;
 
-    $.get(url, function (data) {
+    $.get(url, (data) => {
       $('#hello').text(data);
     });
   });
